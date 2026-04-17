@@ -484,7 +484,7 @@ html[data-theme="dark"] .logo-face {
     }
 
      .modal-alert.show {
-      copacity: 1;
+      opacity: 1;
       pointer-events: all;
      }
     
