@@ -237,8 +237,6 @@ html[data-theme="dark"] .logo-face {
     .hero-pic{
       object-fit: cover;
       border-radius: 50%;
-      width: 100%;
-      height: 100%;
     }
     
     .section__pic-container {
