@@ -136,7 +136,7 @@
       transform-box: fill-box;
    }
    .menu-links {
-     background: var(--accent);
+     background: var(--bg);
      z-index: 1;
      position: absolute;
      top: 100%;
