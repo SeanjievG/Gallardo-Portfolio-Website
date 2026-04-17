@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculator</title>
+</head>
+
+<body>
+  <div>
+   <button onclick="
+    updateCalculation('1');
+    showCalculation();
+   ">1
+   </button>
+   <button onclick="
+    updateCalculation('2');
+    showCalculation();
+   ">2
+   </button>
+   <button onclick="
+    updateCalculation('3');
+    showCalculation();
+   ">3
+   </button>
+  </div>
+  
+  <div>
+   <button onclick="
+    updateCalculation('4');
+    showCalculation();
+   ">4
+   </button>
+   <button onclick="
+    updateCalculation('5');
+    showCalculation();
+   ">5
+   </button>
+   <button onclick="
+    updateCalculation('6');
+    showCalculation();
+   ">6
+   </button>
+  </div>
+  
+  <div>
+    <button onclick="
+    updateCalculation('7');
+    showCalculation();
+   ">7
+    </button>
+    <button onclick="
+    updateCalculation('8');
+    showCalculation();
+   ">8
+    </button>
+    <button onclick="
+    updateCalculation('9');
+    showCalculation();
+   ">9
+    </button>
+  </div>
+  
+  <div>
+   
+   <p id="display"></p>
+   <button onclick="
+    updateCalculation('+');
+    showCalculation();
+   ">+
+   </button>
+   <button onclick="
+    updateCalculation('-');
+    showCalculation();
+   ">-
+   </button>
+   <button onclick="
+    updateCalculation('*');
+    showCalculation();
+   ">×
+   </button>
+   <button onclick="
+    updateCalculation('/');
+    showCalculation();
+   ">÷
+   </button>
+  </div>
+  
+   <button onclick="
+    calculation = eval(calculation);
+    showCalculation();
+    console.log(calculation);
+   ">
+    =
+   </button>
+   <button onclick="
+    calculation = '';
+    console.log(calculation);
+    showCalculation();
+    localStorage.setItem('calculation', calculation);
+   ">Clear</button>
+   <button onclick="
+    deleteLast();
+   ">Del</button>
+   <p class="js-output">
+    
+   </p>
+   
+  
+  <script>
+    let calculation = localStorage.getItem('calculation') || '' ;
+    showCalculation();
+    
+    function updateCalculation (value) {
+    calculation += value;
+    console.log(calculation);
+    localStorage.setItem('calculation',calculation);
+    }
+    
+    function deleteLast() {
+    if (calculation.length > 0) {
+    calculation = calculation.slice(0, -1);
+    showCalculation();
+    localStorage.setItem('calculation', calculation);
+  }
+}
+
+    
+    function showCalculation() {
+     document.getElementById('display').textContent = calculation;
+    }
+  </script>
+</body>
+
+</html>

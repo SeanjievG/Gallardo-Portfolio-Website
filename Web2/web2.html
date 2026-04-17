@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SSLG E-Commerce</title>
+  <link rel="stylesheet" href="web2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="sidebar">
+    
+<button class="menu-btn" onclick="handleHomeClick()">Home</button>
+
+    <button class="menu-btn" onclick="window.location.href='shop.html'">Shop</button>
+    
+    <button class="menu-btn">Orders</button>
+    <button class="menu-btn">Events</button>
+    <button class="menu-btn">Payments</button>
+    <button class="menu-btn">About</button>
+    <button class="menu-btn">Feedback</button>
+    <button class="menu-btn">Support</button>
+
+    <div class="login-box">
+      <p id="login-message"></p>
+      <!-- Sign up toggle -->
+      <p class="signup-toggle">
+        Don't have an account yet? 
+        <button onclick="toggleSignup()">Sign up</button>
+      </p>
+
+      <!-- Sign up form (initially hidden) -->
+      <div id="signup-form" style="display: none;">
+        <h3>Sign Up</h3>
+        <input type="text" id="realname" placeholder="Full Name">
+        <input type="date" id="birthdate" placeholder="Birthdate">
+        <select id="role">
+          <option value="">Select Role</option>
+          <option value="Student">Student</option>
+          <option value="Teacher">Teacher</option>
+          <option value="Non-Teaching Staff">Non-Teaching Staff</option>
+          <option value="Parent">Parent</option>
+          <option value="Alumni">Alumni</option>
+          <option value="Admin">Admin</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" id="newUsername" placeholder="Choose a username">
+        <input type="password" id="newPassword" placeholder="Choose a password">
+        <button onclick="signup()">Create Account</button>
+        <p id="signup-message"></p>
+      </div>
+
+      <h3>Login/Profile</h3>
+      <input type="text" id="username" placeholder="USERNAME">
+      <input type="password" id="password" placeholder="PASSWORD">
+      <label>
+        <input type="checkbox" id="showPassword"> Show Password
+      </label>
+      <button onclick="login()">Login</button>
+      <p id="login-message"></p>
+      
+    <!-- Profile Tab (will appear after login) -->
+<div id="profile-tab" style="display:none;">
+  <h3>Welcome, <span id="profile-username"></span>!</h3>
+  <p><strong>Role:</strong> <span id="profile-role"></span></p>
+  <p><strong>Birthdate:</strong> <span id="profile-birthdate"></span></p>
+  <button onclick="logout()">Logout</button>
+</div>
+    </div>
+  </div>
+
+  <div class="content">
+<div class="header">
+  <img src="school-logo.png" alt="School Logo" class="logo">
+  <h1>Welcome!</h1>
+  <img src="gov-logo.png" alt="School Gov Logo" class="logo">
+</div>
+
+
+    <div class="description">
+      <p>Welcome to the official SFNHS:SSLG e-commerce platform! Here, you can shop for merchandise, stay updated on events, and support our initiatives.</p>
+    </div>
+    
+    <!-- Welcome User Popup -->
+    <div id="welcomePopup" class="popup" style="display: none;">
+  <p id="welcomeMessage"></p>
+  <div class="popup-buttons">
+    <button onclick="handleSavePassword(true)">Yes</button>
+    <button onclick="handleSavePassword(false)">No</button>
+  </div>
+</div>
+
+<!-- Featurecard home -->
+<div class="feature-grid">
+  
+  <!-- Announcement -->
+  <div class="feature-card fade-in" onclick="openFeature('announcements')">
+    <h3><i class="fas fa-bullhorn"></i> Announcements</h3>
+    <p>Stay updated with school news and updates.</p>
+    <div class="latest-announcement">
+      <strong>Latest:</strong> Join us in our Graduation Ceremony, April 15 at SFNHS covered court!
+    </div>
+  </div>
+  
+  <!-- Announcement Modal -->
+<div id="announcementModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>School Announcements</h2>
+    <div id="latestAnnouncement"></div>
+    <button id="toggleArchive" onclick="toggleArchived()">Show Previous</button>
+    <ul id="archivedAnnouncements" style="display: none;"></ul>
+  </div>
+</div>
+  
+  <!-- Shop -->
+  <div class="feature-card fade-in" onclick="window.location.href='shop.html'">
+<h3><i class="fas fa-shopping-cart"></i> Shop</h3>
+    <p>Buy official school merch and event kits.</p>
+    
+    <!-- Featured Item -->
+  <div class="hot-item">
+    <strong>Hot Item:</strong><br>
+    <span>Concert Ticket – ₱50</span>
+    <button onclick="event.stopPropagation(); alert('Redirecting to ticket page...')">Buy Now</button>
+  </div>
+</div>
+  
+  <div class="feature-card fade-in" onclick="openFeature('events')">
+<h3><i class="fas fa-calendar-alt"></i> Events</h3>
+    <p>Check upcoming events and activities.</p>
+    
+    <!-- Countdown to next event -->
+  <div class="event-countdown">
+    <strong>Next Event:</strong> Start of school year <br>
+    <span id="countdown-timer">Loading...</span>
+  </div>
+</div>
+
+<!-- Donation Progress status -->
+<div class="box fade-in" id="donation-box">
+<h3><i class="fas fa-hand-holding-heart"></i> Support Our School Events</h3>
+  <div class="donation-progress">
+  </div>
+  
+<!-- New: Progress Text -->
+  <p id="donation-status" style="text-align:center; font-weight:bold; margin: 5px 0;">₱0 raised</p>
+
+  <button id="open-donation-btn">Donate Now</button>
+  <p class="donation-note">Help us fill up the donation box!</p>
+</div>
+
+<!-- Enhanced Donation Modal -->
+<div id="donationPopup" class="popup">
+  <div id="popupHeader" class="popup-header">
+    <h2>Make a Donation</h2>
+  </div>
+
+  <label for="donationAmount">Amount (₱):</label>
+  <input type="number" id="donationAmount" placeholder="Enter amount">
+
+  <label for="paymentMode">Mode of Payment:</label>
+  <select id="paymentMode">
+    <option value="">Select a payment method</option>
+    <option value="GCash">GCash</option>
+    <option value="PayMaya">PayMaya</option>
+    <option value="Cash">Cash</option>
+    <option value="Other">Other</option>
+  </select>
+  
+  <p id="donation-message" class="donation-message"></p>
+
+  <div class="popup-buttons">
+    <button onclick="submitDonation()">Donate</button>
+    <button onclick="cancelDonation()">Cancel</button>
+  </div>
+</div>
+</div>
+
+<!-- Admin edit -->
+<div id="admin-panel" style="display: none;">
+  <h3>Admin Panel</h3>
+  <button class="admin-btn" onclick="editAnnouncements()">Edit Announcement</button>
+  <button class="admin-btn" onclick="editEvents()">Edit Events</button>
+  <button class="admin-btn" onclick="editShop()">Edit Shop Items</button>
+</div>
+
+
+<!-- Universal popup -->
+<div id="custom-popup" class="popup-overlay" style="display: none;">
+  <div class="popup-box">
+    <p id="popup-message"></p>
+    <div class="popup-buttons">
+      <button onclick="handlePopupYes()">Yes</button>
+      <button onclick="handlePopupNo()">No</button>
+    </div>
+  </div>
+</div>
+
+  <script src="web2.js"></script>
+  
+</body>
+</html>
+
+must fix the functions of admin edit js

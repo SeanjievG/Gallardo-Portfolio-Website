@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  
+  <style>
+    input {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--
+  <button class="js-button">
+    Hello
+  </button>
+  -->
+  
+  <input placeholder="Last Name" class="js-last-name" onkeydown="enterKeydown(event)">
+  <input placeholder="First Name" class="js-first-name" onkeydown="enterKeydown(event)">
+  <button class="js-submit" onclick="
+   submitButton();
+  ">
+    Submit
+  </button>
+  <p class ="js-text">
+    
+  </p>
+  
+  <input placeholder="Try Something" class="js-placeholder" onkeyup="
+   console.log(event.key)
+   ">
+  <p class ="js-text-2">
+    
+  </p>
+  
+  <script>
+   //9ab
+    /*document.querySelector('.js-button')
+     .innerHTML = 'Goodbye';
+    */
+     
+   //9dec
+     function enterKeydown(event) {
+       if (event.key === 'Enter') {
+         submitButton();
+       }
+     }
+   
+    function submitButton() {
+      let firstName = document.querySelector('.js-first-name');
+      let lastName = document.querySelector('.js-last-name');
+      
+       firstName = firstName.value
+       lastName = lastName.value;
+       
+       !firstName && !lastName ?
+        document.querySelector('.js-text')
+         .innerHTML = `Please input the necessary data.`:
+        document.querySelector('.js-text')
+         .innerHTML = `Your name is: ${firstName} ${lastName}`;
+      }
+   //9h
+      function placeHolder() {
+       let text = document.querySelector(".js-placeholder");
+       document.querySelector('.js-text-2')
+        .innerHTML = text;
+        
+      }
+    
+  </script>
+  
+</body>
+
+</html>

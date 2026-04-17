@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  
+  
+  <script>
+  //8abc
+    let product = {
+      item: 'Basketball',
+      price: 2095
+    };
+    console.log(product);
+    console.log(product.price + 500+ ' cents');
+     product['delivery-time'] = "3-days"
+    console.log(product);
+    
+  //8de
+    function comparePrice(
+      product1 = {
+        name: 'Mani',
+        price: 5},
+      product2 = {
+        name: 'Peanut Butter',
+        price: 75}) {
+      
+     if  (product1.price < product2.price) {
+       return product1.name} else {
+       return product2.name;}
+     }
+    
+    function isSameProduct(
+      product1 = {
+        name: 'Rice Cooker',
+        price: 1000
+      },
+      product2 = {
+        name: 'Rice Cooker',
+        price: 1000
+      }) {
+      
+      if (product1.name === product2.name && product1.price === product2.price) {
+       return true
+      } else {
+       return false}
+    }
+    
+    console.log(comparePrice());
+    console.log(comparePrice());
+    console.log(isSameProduct());
+  
+  //8f
+   let myName = 'SeAnJiev';
+   let newName = myName.toLowerCase();
+   let repeatation = 6;
+   
+   console.log(newName);
+   console.log(newName.repeat(repeatation));
+    
+  </script>
+  
+  
+</body>
+
+</html>

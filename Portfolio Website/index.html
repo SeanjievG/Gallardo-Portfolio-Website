@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Website</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaqueries.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <nav id="desktop-nav">
+    <div class="logo-container">
+        <svg onclick="changeMode()" class="logo"
+        width="200"
+        height="200"
+        viewBox="0 0 100 100"
+       >
+       <circle
+        class="logo-face"
+        fill="currentColor"
+        cx="50"
+        cy="50"
+        r="40"
+       />
+    
+       <circle
+        class="logo-left-eye"
+        fill="currentColor"
+        cx="30"
+        cy="50"
+        r="10"
+       />
+     
+       <path
+        class="logo-right-eye"
+        fill="currentColor"
+        d="M 60 50 A 10 5 0 0 0 80 50 Z"
+       />
+    
+        <path
+         class="logo-scar"
+         fill="currentColor"
+         d="M 70 50 L 70 30 L 75 50 L 70 70 Z"
+        />
+       </svg>
+    </div>
+    <div class="menu">
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- For Phone -->
+  <nav id="hamburger-nav">
+    <div class="logo-container-mobile">
+        <svg onclick="changeMode()" class="logo"
+        width="200"
+        height="200"
+        viewBox="0 0 100 100"
+       >
+       <circle
+        class="logo-face"
+        fill="currentColor"
+        cx="50"
+        cy="50"
+        r="40"
+       />
+    
+       <circle
+        class="logo-left-eye"
+        fill="currentColor"
+        cx="30"
+        cy="50"
+        r="10"
+       />
+     
+       <path
+        class="logo-right-eye"
+        fill="currentColor"
+        d="M 60 50 A 10 5 0 0 0 80 50 Z"
+       />
+    
+        <path
+         class="logo-scar"
+         fill="currentColor"
+         d="M 70 50 L 70 30 L 75 50 L 70 70 Z"
+        />
+       </svg>
+    </div>
+    <div class="hamburger-menu">
+      <div class="logo-container-mobile">
+       <svg class="hamburger-icon" onclick="toggleMenu()"
+          width="80"
+          height="80"
+          viewBox="0 0 100 100">
+          <path class="bar top"
+           d="M 20 25 L 80 25
+            "
+            />
+          <path class="bar middle"
+           d="M 20 50 L 80 50
+            "
+            />
+           <path class="bar bottom"
+           d="M 20 75 L 80 75
+            "
+          />
+        </svg>
+       </div>
+       <ul class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contacts" onclick="toggleMenu()">Contacts</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <section id="hero">
+    <div class="section__pic-container">
+      <img class="hero-pic" src="assets/Profile.png" alt="My Picture">
+    </div>
+    <div class="section__text">
+      <p class="section__text__p1">
+        Hello, I'm
+      </p>
+      <h1 class="title">
+        Seanjiev Gallardo
+      </h1>
+      <p class="section__text__p2">
+        Aspiring Frontend Developer, Graphic Designer, & Writer
+      </p>
+      <div class="btn-container">
+        <button class="btn btn-color-2"
+          onclick="window.open('assets/branding-kit.pdf')">
+          Download CV
+        </button>
+        <button class="btn btn-color-1"
+          onclick="location.href='./#contacts'">
+          Contact Info
+        </button>
+      </div>
+      <div id="socials-container">
+        <i class="fa-brands fa-facebook"
+           onclick="location.href='https://www.facebook.com/seanjiev.gallardo.2004'"
+        ></i>
+        <i class="fa-brands fa-square-instagram"
+           onclick="location.href='https://www.instagram.com/seanjievg?igsh=MTljMTB0eTVsZnEwdQ=='"
+        ></i>
+      </div>
+     </div>
+     
+  </section>
+  
+  <section id="about">
+   <!-- I add this -->
+   <div class="section__text">
+    <p class="section__text__p1">
+      Get To Know More
+    </p>
+    <h1 class="title">
+      About Me
+    </h1>
+   </div>
+   <div class="section-container">
+      <div class="section__pic-container">
+        <img class="about-pic" src="assets/about-me.png" alt="My Profile Pic">
+      </div>
+      <div class="about-details-container">
+       <div class="about-containers">
+        <div class="details-container">
+          <i id="icon-about" class="fa-solid fa-user-graduate"></i>
+          <h3>
+            Education
+          </h3>
+          <ul>
+           <li>
+              Graduated High School at San Francisco National High School
+            </li>
+            <li>
+              BSBA Major in HRM undergraduate at Camarines Norte State College
+            </li>
+          </ul>
+        </div>
+        <div class="details-container">
+            <i id="icon-about" class="fa-solid fa-trophy"></i>
+            <h3>
+              Achievements
+            </h3>
+            <ul>
+              <li>
+                No commission yet
+              </li>
+              <li>
+                All previous works were for personal use and school projects
+              </li>
+            </ul>
+        </div>
+        </div>
+        <div class="text-container">
+          <p>I'm an aspiring frontend developer, self-taught graphic designer, and writer. I aim to share stories not only through words but also through visual media. Currently, I'm improving my frontend development and scriptwriting skills; sometimes, I write poems and design posters. I get my inspiration from movies, anime, and literature. Let's "Keep IT simple and fun!"
+       </p>
+        </div>
+      </div>
+   </div>
+     <i class="fa-solid fa-angles-down icon-down" onclick="location.href='./#skills'"></i>
+  </section>
+  
+  <section id="skills">
+   <div class="section__text">
+    <p class="section__text__p1">
+      Read my
+    </p>
+    <h1 class="title">
+      Skills
+    </h1>
+   </div>
+   
+   <div class="skills-details-container">
+     <div class="about-containers">
+       <div class="details-container">
+         <h2 class="skills-sub-title">
+           Frontend Development
+         </h2>
+         <div id="icon-about"class="article-container">
+          <article>
+           <i class="fa-solid fa-atom"></i>
+           <div>
+             <h3>
+               HTML
+             </h3>
+             <p>
+               Intermediate
+             </p>
+           </div>
+          </article>
+          <article>
+            <i class="fa-solid fa-atom"></i>
+            <div>
+              <h3>
+                CSS
+              </h3>
+              <p>
+                Advanced
+              </p>
+            </div>
+          </article>
+          <article>
+           <i class="fa-solid fa-atom"></i>
+           <div>
+             <h3>
+               Javascript
+             </h3>
+             <p>
+               Novice
+             </p>
+           </div>
+          </article>
+          <article>
+            <i class="fa-solid fa-atom"></i>
+            <div>
+              <h3>
+                SAS
+              </h3>
+              <p>
+                None
+              </p>
+            </div>
+          </article>
+          <article>
+            <i class="fa-solid fa-atom"></i>
+            <div>
+              <h3>
+                Typescript
+              </h3>
+              <p>
+                Novice
+              </p>
+            </div>
+          </article>
+          <article>
+            <i class="fa-solid fa-atom"></i>
+            <div>
+              <h3>
+                Material UI
+              </h3>
+              <p>
+                Novice
+              </p>
+            </div>
+          </article>
+         </div>
+       </div>
+     </div>
+     
+     <div class="about-containers">
+       <div class="details-container">
+         <h2 class="skills-sub-title">
+           Graphic Design
+         </h2>
+         <div id="icon-about" class="article-container">
+          <article>
+           <i id="icon-about"class="fa-solid fa-fan"></i>
+           <div>
+             <h3>
+              Pixel Art
+             </h3>
+             <p>
+              Advanced
+             </p>
+           </div>
+          </article>
+          <article>
+           <i class="fa-solid fa-fan"></i>
+           <div>
+             <h3>
+               Movie Poster Design
+             </h3>
+             <p>
+               Advanced
+             </p>
+           </div>
+          </article>
+          <article>
+            <i class="fa-solid fa-fan"></i>
+            <div>
+              <h3>
+               Poster Design
+              </h3>
+              <p>
+                Intermediate
+              </p>
+            </div>
+          </article>
+          <article>
+           <i class="fa-solid fa-fan"></i>
+           <div>
+             <h3>
+               Logo Design
+             </h3>
+             <p>
+               Novice
+             </p>
+           </div>
+          </article>
+          <article>
+            <i class="fa-solid fa-fan"></i>
+            <div>
+              <h3>
+                Photoshop
+              </h3>
+              <p>
+                Advanced
+              </p>
+            </div>
+          </article>
+          <article>
+            <i class="fa-solid fa-fan"></i>
+            <div>
+              <h3>
+                Arts & Illustration Design
+              </h3>
+              <p>
+                Novice
+              </p>
+            </div>
+          </article>
+         </div>
+       </div>
+     </div>
+     
+     <div class="about-containers">
+       <div class="details-container">
+         <h2 class="skills-sub-title">
+           Creative Writing
+         </h2>
+         <div id="icon-about" class="article-container">
+           <article>
+             <i class="fa-solid fa-clover"></i>
+             <div>
+               <h3>
+                 Poetry
+               </h3>
+               <p>
+                 Intermediate
+               </p>
+             </div>
+           </article>
+           <article>
+             <i class="fa-solid fa-clover"></i>
+             <div>
+               <h3>
+                 Essay
+               </h3>
+               <p>
+                 Advanced
+               </p>
+             </div>
+           </article>
+           <article>
+             <i class="fa-solid fa-clover"></i>
+             <div>
+               <h3>
+                 Short Story
+               </h3>
+               <p>
+                 Advanced
+               </p>
+             </div>
+           </article>
+           <article>
+             <i class="fa-solid fa-clover"></i>
+             <div>
+               <h3>
+                 Blog
+               </h3>
+               <p>
+                 Novice
+               </p>
+             </div>
+           </article>
+           <article>
+             <i class="fa-solid fa-clover"></i>
+             <div>
+               <h3>
+                 Screenplay
+               </h3>
+               <p>
+                 Advanced
+               </p>
+             </div>
+           </article>
+           <article>
+             <i class="fa-solid fa-clover"></i>
+             <div>
+               <h3>
+                 Article
+               </h3>
+               <p>
+                 Novice
+               </p>
+             </div>
+           </article>
+         </div>
+       </div>
+     </div>
+   </div>
+   
+    <i class="fa-solid fa-angles-down icon-down" onclick="location.href='./#projects'"></i>
+  </section>
+  
+  <section id="projects">
+   <div class="section__text">
+    <p class="section__text__p1">
+      Browse my recent
+    </p>
+    <h1 class="title">
+      Projects
+    </h1>
+   </div>
+   <div class="skills-details-container">
+    <div class="about-containers">
+     <div class="details-container color-container">
+       <div class="article-container">
+         <img src="assets/Hyouka.png" alt="Project 1" class="project-img">
+       </div>
+       <h2 class="skills-sub-title project-title">
+         Web Practices
+       </h2>
+       <div class="btn-container">
+         <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/'">
+           Browse Now
+         </button>
+         <button class="btn btn-color-1 project-btn" onclick="openModal('assets/intermediate-training.zip')">
+           Get Samples
+         </button>
+       </div>
+       
+     
+     </div>
+     <div class="details-container color-container">
+       <div class="article-container">
+         <img src="assets/project-three.png" alt="Project 1" class="project-img">
+       </div>
+       <h2 class="skills-sub-title project-title">
+         Graphic Designs
+       </h2>
+       <div class="btn-container">
+         <button class="btn btn-color-2 project-btn" onclick="openGallery()">
+           View Now
+         </button>
+         <button class="btn btn-color-1 project-btn" onclick="openModal('assets/sample-designs.pdf')">
+           Get Samples
+         </button>
+       </div>
+     </div>
+     <div class="details-container color-container">
+       <div class="article-container">
+         <img src="assets/Sakura.png" alt="Project 1" class="project-img">
+       </div>
+       <h2 class="skills-sub-title project-title">
+         Written Works
+       </h2>
+       <div class="btn-container">
+         <button class="btn btn-color-2 project-btn" onclick="openWriting(    'Poetry Collection',
+              'A short collection of folkloric poems, combining fantasy, tragedy, and comedy',
+              'assets/poetry.pdf')">
+           Read Now
+         </button>
+         <button class="btn btn-color-1 project-btn" onclick="openModal('assets/sample-written-works.pdf')">
+           Get Samples
+         </button>
+       </div>
+     </div>
+    </div>
+   </div>
+   <i class="fa-solid fa-angles-down icon-down" onclick="location.href='./#contacts'">
+   </i>
+  </section>
+  
+  <section id="contacts">
+   <div class="section__text">
+     <p class="section__text__p1">
+       Get in touch
+     </p>
+     <h1 class="title">
+       Contact Me
+     </h1>
+   </div>
+   <div class="contact-info-upper-container">
+     <div class="contact-info-container">
+       <i id="icon-about"class="fa-solid fa-envelope icon contact-icon"></i>
+       <p>
+         <a href="mailto: seanjievpogi29@gmail.com">seanjievpogi29@gmail.com</a>
+       </p>
+     </div>
+     <div class="contact-info-container">
+       <i id="icon-about" class="fa-brands fa-facebook-messenger icon contact-icon"></i>
+       <p>
+         <a href="https://m.me/seanjiev.gallardo.2004">Messenger</a>
+       </p>
+     </div>
+   </div>
+  </section>
+  
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+       <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+      </div>
+    </nav>
+    <p>
+      Copyright &#169; 2026 Seanjiev Gallardo. All Rights Reserved.
+    </p>
+  </footer>
+  
+  <div id="download-modal" class="modal-alert">
+   <div class="modal-content">
+    <h2>Download Samples?</h2>
+    <p>Do you want to download this category's sample file?</p>
+    
+    <div class="modal-buttons">
+      <button class="btn btn-color-2" id="cancel-btn">Cancel</button>
+      <button class="btn btn-color-1" id="confirm-btn">Download</button>
+    </div>
+   </div>
+ </div>
+ 
+ <div id="gallery-modal" class="modal">
+  <div class="modal-content gallery">
+    
+    <span class="close-btn" onclick="closeGallery()">&times;</span>
+    
+    <h2>Graphic Design Gallery</h2>
+    
+    <div class="gallery-grid">
+      <img src="assets/design1.png" alt="Design 1" onclick="openImage(this.src)">
+      <img src="assets/design2.png" alt="Design 2" onclick="openImage(this.src)">
+      <img src="assets/design3.png" alt="Design 3" onclick="openImage(this.src)">
+      <img src="assets/design4.png" alt="Design 4" onclick="openImage(this.src)">
+    </div>
+   </div>
+  </div>
+  
+  <div id="writing-modal" class="modal">
+  <div class="modal-content writing-modal">
+    <span class="close-btn" onclick="closeWriting()">&times;</span>
+    <h2 id="writing-title">Title</h2>
+    <p id="writing-desc">
+      Description or excerpt goes here...
+    </p>
+    <button class="btn btn-color-1" onclick = "openModal('assets/.pdf')">
+      Read Full
+    </button>
+    
+  </div>
+</div>
+  
+  <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>School E-Commerce Shop</title>
+  <style>
+    :root {
+      --main-blue: #5a86c3;
+      --white: #ffffff;
+      --dark-blue: #0f396b;
+      --red: #f31932;
+      --yellow: #ffcf15;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--white);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: var(--main-blue);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .shop-section {
+      padding: 2rem;
+    }
+
+    h2 {
+      border-left: 5px solid var(--dark-blue);
+      padding-left: 1rem;
+      color: var(--dark-blue);
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 1rem;
+      background: #f9f9f9;
+      position: relative;
+    }
+
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      font-weight: bold;
+      color: var(--main-blue);
+    }
+
+    .card button {
+      background-color: var(--main-blue);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cart-btn {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: var(--red);
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    .cart-modal {
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 320px;
+      background: white;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-modal.open {
+      transform: translateX(0);
+    }
+
+    .cart-header {
+      background: var(--main-blue);
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .cart-items {
+      flex-grow: 1;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+
+    .cart-items p {
+      font-size: 0.9rem;
+    }
+
+    .checkout-section {
+      padding: 1rem;
+      border-top: 1px solid #ccc;
+    }
+
+    .checkout-section label {
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .checkout-section button {
+      background: var(--dark-blue);
+      color: white;
+      width: 100%;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 5px;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>School Shop</h1>
+</header>
+
+<div class="shop-section">
+  <h2>Tangible Items</h2>
+  <div class="products" id="tangible-products">
+    <!-- Example Tangible Product -->
+    <div class="card">
+      <h3>Concert Ticket</h3>
+      <p>Access to school concert event.</p>
+      <p class="price">₱100</p>
+      <button onclick="addToCart('Concert Ticket', 100)">Add to Cart</button>
+    </div>
+    <div class="card">
+      <h3>Notebook</h3>
+      <p>70 pages, school-themed cover.</p>
+      <p class="price">₱40</p>
+      <button onclick="addToCart('Notebook', 40)">Add to Cart</button>
+    </div>
+  </div>
+
+  <h2 style="margin-top:2rem;">Non-Tangible Items</h2>
+  <div class="products" id="nontangible-products">
+    <!-- Example Non-Tangible Product -->
+    <div class="card">
+      <h3>Fun Run Registration</h3>
+      <p>Includes number tag and refreshments.</p>
+      <p class="price">₱75</p>
+      <button onclick="addToCart('Fun Run Registration', 75)">Add to Cart</button>
+    </div>
+    <div class="card">
+      <h3>Donation to School Program</h3>
+      <p>Support student-led events and projects.</p>
+      <p class="price">₱50</p>
+      <button onclick="addToCart('School Donation', 50)">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Button -->
+<button class="cart-btn" onclick="toggleCart()">🛒</button>
+
+<!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p>No items yet.</p>
+  </div>
+  <div class="checkout-section">
+    <label>Payment Method:</label>
+    <select id="paymentMethod">
+      <option>On-Desk Payment</option>
+      <option>Online Payment</option>
+    </select>
+
+    <label><input type="checkbox" id="reservation"> Reservation / Preorder</label>
+
+    <button onclick="checkout()">Confirm Order</button>
+  </div>
+</div>
+
+<script>
+  let cart = [];
+
+  function addToCart(name, price) {
+    const existing = cart.find(item => item.name === name);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+    alert(`${name} added to cart.`);
+    renderCart();
+  }
+
+  function renderCart() {
+    const cartItems = document.getElementById('cartItems');
+    cartItems.innerHTML = '';
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = '<p>No items yet.</p>';
+      return;
+    }
+
+    cart.forEach((item, index) => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <p><strong>${item.name}</strong> x${item.qty} — ₱${item.price * item.qty}
+        <button onclick="removeItem(${index})" style="float:right;">❌</button></p>
+      `;
+      cartItems.appendChild(div);
+    });
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    renderCart();
+  }
+
+  function toggleCart() {
+    document.getElementById('cartModal').classList.toggle('open');
+  }
+
+  function checkout() {
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+
+    const payment = document.getElementById('paymentMethod').value;
+    const reserved = document.getElementById('reservation').checked;
+    let total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+    alert(`Order placed!\nPayment: ${payment}\nReservation: ${reserved ? 'Yes' : 'No'}\nTotal: ₱${total}`);
+    cart = [];
+    renderCart();
+    toggleCart();
+  }
+</script>
+
+</body>
+</html>

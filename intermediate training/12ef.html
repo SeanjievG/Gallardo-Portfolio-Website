@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>12e exercise</title>
+  
+  <style>
+    
+    body {
+      padding-bottom: 1000px;
+    }
+    
+    .e-main {
+      border: none;
+      box-shadow: 0px 0px 2px rgba(107, 107, 107, .5);
+      display: flex;
+      width: 300px;
+      height: 100px;
+      flex-direction: column;
+      justify-content: space-between ;
+    }
+    .home, .notification, .message {
+      height: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding-right: 5px;
+      padding-left: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    
+    button {
+      background-color: rgba(23, 104, 168, 1);
+      border: none;
+      color: white;
+      border-radius: 8px;
+    }
+    
+    p {
+      font-weight: 500;
+      font-size: 15px;
+    }
+    
+    .f-main {
+      margin-top: 50px;
+      display: flex;
+      background-color: rgba(141, 87, 170, 1);
+      align-items: center;
+      justify-content: space-between;
+      max-width: 500px;
+    }
+    .one {
+      margin: 0px;
+      width: 30px;
+      padding-left: 10px;
+    }
+    .home-one {
+      color: white;
+      font-size: 12px;
+    }
+    
+    .two {
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 180px;
+      max-width: 300px;
+      flex: 1;
+    }
+    .placeholder-two {
+      border: none;
+      border-radius: 10px;
+      padding-left: 10px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      width: 180px;
+      max-width: 300px;
+    }
+    
+    .three {
+      padding-right: 10px;
+      width: 75px;
+      
+    }
+    .button-three {
+      border: solid;
+      border-radius: 2px;
+      border-width: 1px;
+      border-color: white;
+      background-color: transparent;
+    }
+    
+    .g-main {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .exercise {
+      width: 300px;
+      height: 50px;
+      border: none;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .profile-pic {
+      padding-left: 5px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      padding-right: 5px;
+      width: 50px;
+    }
+    .picture {
+      width: 40px;
+      object-fit: cover;
+      height: 40px;
+      border-radius: 20px;
+    }
+    .profile-info {
+      font-size: 10px;
+      flex: 1;
+    }
+    .name {
+      font-weight: bold;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .species {
+      color: rgba(108, 108, 108, 1);
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .status {
+      color: rgba(108, 108, 108, 1);
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      font-style: italic;
+
+    }
+    
+    .profile-button {
+      width: 10px;
+      margin-left: 50px;
+    }
+    .follow-button {
+      background-color: #0F74BA;
+      border: none;
+      color: white;
+      border-radius: 2px;
+      font-size: 12px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+    }
+  </style>
+  
+</head>
+
+<body>
+  
+ <div class="e-main">
+  <div class="home">
+    <p>Home</p>
+    <button>14</button>
+  </div>
+  <div class="notification">
+    <p>Notification</p>
+    <button>3</button>
+  </div>
+  <div class="message">
+    <p>Messages</p>
+    <button>5</button>
+  </div>
+ </div>
+  
+ <div class="f-main">
+   <div class="one">
+     <p class="home-one">
+       Home
+     </p>
+   </div>
+   <div class="two">
+     <input class="placeholder-two"type="text" placeholder="Search">
+   </div>
+   <div class="three">
+     <button class="button-three">
+       Download
+     </button>
+   </div>
+  </div>
+ 
+  <div class="g-main">
+    
+  <div class="exercise">
+   <div class="profile-pic">
+     <img class="picture" src="photos/dawg.jpg" alt="dawg pic">
+   </div>
+   <div class="profile-info">
+     <p class="name">
+       Dawg
+     </p>
+     <p class="species">
+       The Dog
+     </p>
+     <p class="status">
+       Low-key
+     </p>
+   </div>
+   <div class="profile-button">
+     <button class="follow-button">
+       Follow
+     </button>
+   </div>
+ </div>
+ 
+ 
+ <div class="exercise">
+   <div class="profile-pic">
+     <img class="picture" src="photos/lego.jpg" alt="dawg pic">
+   </div>
+   <div class="profile-info">
+     <p class="name">
+       Lego Guy
+     </p>
+     <p class="species">
+       The Lego
+     </p>
+     <p class="status">
+       In love
+     </p>
+   </div>
+   <div class="profile-button">
+     <button class="follow-button">
+       Follow
+     </button>
+   </div>
+ </div>
+ 
+ <div class="exercise">
+   <div class="profile-pic">
+     <img class="picture" src="photos/sad boi.jpg" alt="dawg pic">
+   </div>
+   <div class="profile-info">
+     <p class="name">
+       Sad Boi
+     </p>
+     <p class="species">
+       The Man
+     </p>
+     <p class="status">
+       Depressed
+     </p>
+   </div>
+   <div class="profile-button">
+     <button class="follow-button">
+       Follow
+     </button>
+   </div>
+  </div>
+  </div>
+</body>
+
+</html>

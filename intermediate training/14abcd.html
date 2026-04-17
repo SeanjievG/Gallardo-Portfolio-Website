@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>14abcd exercise</title>
+  
+  <style>
+    .side-bar {
+      position: fixed;
+      background-color: seagreen;
+      color: white;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+    }
+    
+    .overlay {
+      background-color: rgba(0, 0, 0, .8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+    p {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    .modal {
+      background-color: white;
+      width: 250px;
+      padding-left: 10px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      border: none;
+      border-radius: 2px;
+    }
+    .modal-title {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .modal-text {
+      font-size: 15px;
+    }
+    
+  </style>
+</head>
+
+
+
+<body>
+  <div class="side-bar">
+    right sidebar
+  </div>
+  
+  <div class="overlay">
+   <div class="modal">
+    <p class="modal-title">
+      Modal Title
+    </p>
+    <p class="modal-text">
+      This is a modal
+    </p>
+    <button class="modal-button">
+      Close
+    </button>
+   </div>
+  </div>
+</body>
+
+</html>

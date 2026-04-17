@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    .card {
+      width: 100px;
+      height: 100px;
+      perspective: 1000px;
+    }
+    
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform .6s;
+    }
+    
+    .card.flip .card-inner {
+      transform: rotateY(180deg);
+    }
+    
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+    
+    .card-front {
+      background-color:lightblue;
+    }
+    
+    .card-back {
+      transform: rotateY(180deg);
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+  </style>
+</head>
+  
+<body>
+
+  <div class="card">
+   <div class="card-inner">
+    <div id="card-front"class="card-front">
+      hello
+    </div>
+    <div id="card-back"class="card-back
+    ">
+      <img src="Picsart_26-01-29_22-46-02-620.png">
+    </div>
+   </div>
+  </div>
+
+
+  <script src=script.js>
+  </script>
+  
+</body>
+
+</html>

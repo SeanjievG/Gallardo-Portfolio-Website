@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+   <div class="logo-container">
+    <svg onclick="changeMode()" class="logo"
+        width="200"
+        height="200"
+        viewBox="0 0 100 100"
+       >
+       <circle
+        class="logo-face"
+        fill="currentColor"
+        cx="50"
+        cy="50"
+        r="40"
+       />
+    
+       <circle
+        class="logo-left-eye"
+        fill="currentColor"
+        cx="30"
+        cy="50"
+        r="10"
+       />
+     
+       <path
+        class="logo-right-eye"
+        fill="currentColor"
+        d="M 60 50 A 10 5 0 0 0 80 50 Z"
+       />
+    
+        <path
+         class="logo-scar"
+         fill="currentColor"
+         d="M 70 50 L 70 30 L 75 50 L 70 70 Z"
+        />
+       </svg>
+   </div>
+    <h1>
+      Welcome!
+    </h1>
+   <div class="logo-container">
+    <svg class="menu" onclick="menuBar()"
+      width="100"
+      height="100"
+      viewBox="0 0 100 100">
+      <path class="menu-bars"
+       d="M 20 50 L 80 50
+          M 20 25 L 80 25
+          M 20 75 L 80 75
+        "
+      />
+    </svg>
+   </div>
+  </header>
+ 
+  <main class="main">
+    <section class="hero">
+      <div class="hero-box">
+       <div class="hero-box-front">
+        <h2>
+          Hello! I'm Sean.
+        </h2>
+        <p>
+          My name is Seanjiev Gallardo. I'm currently studying at CNSC under HRM program. Although irrelevant to my program, I'm trying to learn web development, graphic design, and fiction and non-fiction writing.
+        </p>
+        </div>
+        
+        <div class="hero-box-back">
+          <img src="images/myPic.png" alt="">
+        </div>
+       </div>
+       
+    </section>
+    
+    <section class="main-message">
+    </section>
+    
+    <button class="arrow-btn">
+      
+    </button>
+    
+    <section class="main-cards">
+     <div class="card">
+      <h3>
+        About Me
+      </h3>
+      <p class="card-info">
+        Personal Information, Education, Skills, and Others
+      </p>
+      <button>
+        Read More
+      </button>
+     </div>
+    
+     <div class="card">
+      <h3>
+        Art Works
+      </h3>
+      <p class="card-info">
+        Graphic Designs, Digital Painting, Photography, and Others
+      </p>
+      <div class="card-update">
+        <p class="update">
+          <span>Update:</span> check my latest upload now!
+        </p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>
+        Written Works
+      </h3>
+      <p class="card-info">
+        Poems, Short Stories, Flash Fiction, Essays, and Others
+      </p>
+      <div class="card-update">
+        <p class="update">
+          <span>Update:</span> read my latest post now!
+        </p>
+      </div>
+     </div>
+    </section>
+  </main>
+  
+  <!--
+  <footer id="contact">
+   <div class="footer-content">
+
+    <div class="contact">
+      <h3>Contact</h3>
+      <p>
+        Email: seanjievg@gmail.com
+      </p>
+    </div>
+
+    <div class="socials">
+      <a href="#">Facebook</a>
+      <a href="#">GitHub</a>
+    </div>
+   </div>
+
+   <p class="copyright">
+    © 2026 Seanjiev Gallardo. All rights reserved.
+   </p>
+  </footer>
+  -->
+  
+  <footer>
+    <div class="contact">
+      <p class="footer-text">
+        <span>
+          Contact me at:
+        </span>
+        seanjievg@gmail.com
+      </p>
+    </div>
+    
+    <div class="social">
+      <p class="footer-text">
+        <span>
+          Visit me on:
+        </span>
+       <a href="https://www.facebook.com/seanjiev.gallardo.2004">
+        Facebook
+        </a>
+        <a href="instagram.com">
+        Instagram
+        </a>
+      </p>
+    </div>
+    
+    <div class="copyright">
+      <p class="footer-text">
+        © 2026 Seanjiev Gallardo. All rights reserved.
+      </p>
+    </div>
+  </footer>
+  
+  <script src="script.js"></script>
+ </body> 
+
+</html>

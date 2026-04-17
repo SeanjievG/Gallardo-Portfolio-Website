@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>15abcd exercise</title>
+  
+  <style>
+    body {
+      padding-bottom: 3000px;
+    }
+    
+    .main-container {
+      background-color: rgba(114, 114, 114, 1);
+      width: 150px;
+      height: 100px;
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      z-index: 100;
+    }
+    .relative-container {
+      position: relative;
+    }
+    .close-button {
+      color: white;
+      background-color: rgba(40, 40, 40, 1);
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      margin: 0;
+      padding-right: 10px;
+      padding-left: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      border-radius: 15px;
+      font-size: 15px;
+    }
+    .time-container {
+      color: white;
+      background-color: rgba(40, 40, 40, 1);
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 13px;
+      padding-right: 5px;
+      padding-left: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+    
+    .item-container {
+      background-color: rgba(110, 110, 110, 1);
+      display: flex;
+      justify-content: center;
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+    .sales-stamp {
+      background-color: rgba(44, 44, 44, 1);
+      color: white;
+      font-size: 12px;
+      padding-top: 5px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 5px;
+      position: absolute;
+      right: 0;
+      top: 5px;
+    }
+    .cart-info {
+      background-color: rgba(207, 207, 207, .5);
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      padding-bottom: 25px;
+      padding-top: 25px;
+      z-index: 100;
+      
+    }
+    
+  </style>
+  
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="close-button">
+      x
+    </div>
+    <div class="time-container">
+      0:29
+    </div>
+  </div>
+  
+  <div class="item-container">
+    <img class="item" src="photos/jacket.png" alt="jacket">
+    <div class="sales-stamp">
+     20% OFF
+    </div>
+    <div class="cart-info">
+      <button class="cart-action">
+        Add to Cart
+        </button>
+    </div>
+  </div>
+  
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>14ef exercise</title>
+  
+  <style>
+    body {
+      padding-bottom: 1500px;
+      background-color: #DADADA;
+    }
+    p {
+      margin:0;
+    }
+    .header-container {
+      background-color: white;
+      display: flex;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 70px;
+      padding-left: 10px;
+      padding-right: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .profile {
+      display: flex;
+      width: 130px;
+      height: 50px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      object-fit: cover;
+    }
+    .profile-name {
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .profile-action {
+      display: flex;
+    }
+    button {
+      border: none;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 10px;
+      padding-left: 10px;
+      border-radius: 5px;
+    }
+    .button-a {
+      background-color: #006AB4;
+      color: white;
+      margin-right: 5px;
+    }
+    
+    .sidebar-a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      background-color: #363636;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      margin-top: 70px;
+      padding-top: 10px;
+    }
+    .picture {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      object-fit: cover;
+      margin-bottom: 5px;
+    }
+    .sidebar-b {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      background-color: #6F6F6F;
+      left: 60px;
+      top: 0;
+      bottom: 0;
+      width: 150px;
+      margin-top: 70px;
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+    .main-action {
+      display: flex;
+      justify-content: space-between;
+      width: 150px;
+      color: #DADADA;
+    }
+    .action-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      color: #DADADA;
+      height: 100px;
+    }
+    
+  </style>
+  
+</head>
+
+
+
+<body>
+  <div class="header-container">
+    <div class="profile">
+      <img class="profile-pic" src="photos/dawg.jpg" alt="dawg pic">
+      <p class="profile-name">
+        Cool Dawg
+      </p>
+    </div>
+    
+    <div class="profile-action">
+      <button class="button-a">
+        Add Friend
+      </button>
+      <button>
+        Message
+      </button>
+    </div>
+  </div>
+  
+  <div class="sidebar-a">
+    <img class="picture" src="photos/lego.jpg" alt="">
+    <img class="picture" src="photos/hero.jpg" alt="">
+    <img class="picture" src="photos/sad boi.jpg" alt="">
+  </div>
+  <div class="sidebar-b">
+    <div class="main-action">
+      <p>
+        INFO
+      </p>
+      <p>
+        +
+      </p>
+    </div>
+    <div class="action-text">
+      <p>
+        # new-videos
+      </p>
+      <p>
+        # updates
+      </p>
+      <p>
+        # faq
+      </p>
+    </div>
+  </div>
+  
+  
+</body>
+
+</html>

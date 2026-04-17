@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coinflip</title>
+</head>
+
+<body>
+  <button onclick="
+   game('Heads');
+  ">Heads</button>
+  
+  <button onclick="
+   game('Tails');
+  ">Tails</button>
+  
+  <button onclick = "
+   currentScore();
+  ">
+    Score
+  </button>
+  
+  <button onclick="
+   gameStatus = {
+    rights: 0,
+    mistakes: 0
+   };
+   newGame();
+  "> New Game</button>
+  
+  <p class="js-outcome-text">
+    
+  </p>
+  
+  <script>
+    let gameStatus = JSON.parse(localStorage.getItem('gameStatus')) || {
+      rights: 0,
+      mistakes: 0
+    };
+    
+    function game(playerGuess) {
+      const randomNumber = Math.random();
+      let result = '';
+      let outcome = '';
+      
+      result = randomNumber < .5 ?
+       'Tails' : 'Heads';
+       
+      /*
+      console.log(`The coin is flip: ${result}`);
+      
+      console.log(`You chose ${playerGuess}`);
+      */
+      
+      if (result === playerGuess) {
+        outcome = 'You guess it right!';
+        gameStatus.rights += 1;
+      } else {
+        outcome = 'Better luck next time.';
+        gameStatus.mistakes += 1;
+      }
+       
+      localStorage.setItem('gameStatus', JSON.stringify(gameStatus));
+      
+      document.querySelector('.js-outcome-text')
+       .innerHTML = `${outcome}
+Right: ${gameStatus.rights} Mistakes: ${gameStatus.mistakes}`;
+    }
+    
+    
+    function newGame() {
+      localStorage.setItem('gameStatus', JSON.stringify(gameStatus));
+      
+      document.querySelector(".js-outcome-text")
+       .innerHTML = `The game has been reset!
+Right: ${gameStatus.rights} Mistakes: ${gameStatus.mistakes}`
+      ;
+    }
+    
+     function currentScore() {
+      document.querySelector('.js-outcome-text')
+        .innerHTML = `Current Score:
+Right: ${gameStatus.rights} Mistakes: ${gameStatus.mistakes}`;
+    }
+  </script>
+  
+</body>
+
+</html>

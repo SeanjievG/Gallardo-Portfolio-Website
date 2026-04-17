@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>13fg practice</title>
+ 
+ <style>
+ 
+   .main-container {
+     display: flex;
+     
+   }
+   p {
+     margin: 0px;
+     font-size: 13px;
+   }
+   .photo-container {
+     display: flex;
+     width: 50px;
+     margin-right: 8px;
+   }
+   .photo {
+     width: 45px;
+     height: 45px;
+     object-fit: cover;
+     border-radius: 50%;
+   }
+   
+   .info-container {
+     display: flex;
+     flex-direction: column;
+     width: 280px;
+   }
+   .info-content {
+     display: flex;
+     flex-direction: column;
+     margin-bottom: 10px;
+   }
+   .username {
+     display: flex;
+     margin-bottom: 4px;
+   }
+   .main-name {
+     font-weight: bold;
+     margin-right: 5px;
+   }
+   .gmail {
+     color: rgba(94, 94, 94, 1);
+   }
+   .main-info {
+     line-height: 18px;
+   }
+   
+   .link-container {
+     border: solid;
+     border-color: rgba(198, 198, 198, 1);
+     border-width: 1px;
+     width: 280px;
+     height: 70px;
+     border-radius: 10px;
+     display: flex;
+     align-items: center;
+   }
+   .box-color {
+     display: flex;
+     background-color: rgba(198, 198, 198, 1);
+     border: none;
+     height: 71px;
+     border-top-left-radius: 10px;
+     border-bottom-left-radius: 10px;
+     flex: 1;
+   }
+   .link-info {
+     width: 200px;
+     margin-left: 10px;
+   }
+   .link {
+     color: rgba(94, 94, 94, 1);
+   }
+   
+ </style>
+ 
+</head>
+
+
+
+<body>
+ <div class="main-container">
+   
+  <div class="photo-container">
+    <img class="photo" src="photos/dawg.jpg">
+  </div>
+  
+  <div class="info-container">
+    <div class="info-content">
+      <div class="username">
+        <p class="main-name">
+          supersimple.dev
+        </p>
+        <p class="gmail">
+          @SuperSimpleDev
+        </p>
+      </div>
+      <div class="info">
+        <p class="main-info">
+          What is backend web development? A complete overview. New video is up!
+        </p>
+      </div>
+    </div>
+    
+    <div class="link-container">
+      <div class="box-color">
+      </div>
+      <div class="link-info">
+        <p class="link">
+          youtube.com
+        </p>
+        <p class="title">
+          Backend web development - a complete overview (2021)
+        </p>
+      </div>
+    </div>
+  </div>
+  
+ </div>
+</body>
+
+</html>
