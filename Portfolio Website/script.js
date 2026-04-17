@@ -72,6 +72,10 @@ document.getElementById("download-modal").addEventListener("click", function (e)
   }
 });
 
+document.getElementById("read-full-btn").addEventListener("click", () => {
+  openModal(currentPDF);
+});
+
 //Change theme
 /*
 function changeMode() {
