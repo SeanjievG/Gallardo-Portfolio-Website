@@ -66,6 +66,12 @@ document.getElementById("writing-modal").addEventListener("click", function (e) 
   }
 });
 
+document.getElementById("download-modal").addEventListener("click", function (e) {
+  if (e.target === this) {
+    closeModal();
+  }
+});
+
 //Change theme
 /*
 function changeMode() {
